@@ -32,7 +32,7 @@ Start vim, use visual mode to highlight a set of numbers, and use `++`.
 The result will be output like:
 
 ```
-sum: 21     avg: 3.5     min: 1     max: 6
+sum: 21   avg: 3.5   min: 1   max: 6   count: 6
 ```
 
 The results are also stored in the following registers:
@@ -41,6 +41,7 @@ The results are also stored in the following registers:
  * a : average
  * n : min
  * x : max
+ * c : number of items
  * r : range
 
 which can then be pasted with `"sp`, etc.  The sum is also available in

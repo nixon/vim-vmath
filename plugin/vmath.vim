@@ -40,7 +40,7 @@ endfunction
 let s:NUM_PAT = '^[+-]\?\d\+\%([.]\d\+\)\?\([eE][+-]\?\d\+\)\?$'
 
 " How widely to space the report components...
-let s:REPORT_GAP = 5  "spaces between components
+let s:REPORT_GAP = 3  "spaces between components
 
 " Do simple math on current yank buffer...
 function! VMATH_Analyse ()
@@ -59,6 +59,7 @@ function! VMATH_Analyse ()
     call setreg('x', s:tidy( s:max(numbers)         )) " Max     --> register x
     call setreg('n', s:tidy( s:min(numbers)         )) " Min     --> register n
     call setreg('r',         @n . ' to ' . @x        ) " Range   --> register r
+    call setreg('c', len(numbers)                    ) " Count   --> register c
 
     " Default paste buffer should depend on original contents (TODO)
     call setreg('', @s )
@@ -84,6 +85,10 @@ function! VMATH_Analyse ()
     echon   'x'
     echohl NONE
     echon    ': ' . @x . gap
+    echohl NormalUnderlined
+    echon  'c'
+    echohl NONE
+    echon  'ount: ' . @c
 
 endfunction
 
