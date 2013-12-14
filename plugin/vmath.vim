@@ -47,11 +47,11 @@ function! VMATH_Analyse ()
 
     " Calculate and en-register various interesting metrics...
     let summation = len(numbers) ? join( numbers, ' + ') : '0'
-    call setreg('s', s:tidy( eval( summation )      ))   " Sum     --> register s
-    call setreg('a',         s:average(raw_numbers)  )   " Average --> register a
-    call setreg('x', s:tidy( s:max(numbers)         ))   " Max     --> register x
-    call setreg('n', s:tidy( s:min(numbers)         ))   " Min     --> register n
-    call setreg('r',         @n . ' to ' . @x        )   " Range   --> register r
+    call setreg('s', s:tidy( eval( summation )      )) " Sum     --> register s
+    call setreg('a',         s:average(raw_numbers)  ) " Average --> register a
+    call setreg('x', s:tidy( s:max(numbers)         )) " Max     --> register x
+    call setreg('n', s:tidy( s:min(numbers)         )) " Min     --> register n
+    call setreg('r',         @n . ' to ' . @x        ) " Range   --> register r
 
     " Default paste buffer should depend on original contents (TODO)
     call setreg('', @s )
