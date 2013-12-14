@@ -26,7 +26,14 @@ set cpo&vim
 
 " Grab visual selection and do simple math on it...
 function! VMATH_YankAndAnalyse ()
-    return "y:call VMATH_Analyse()\<CR>gv"
+    if &showmode
+        " Don't reselect the visual region if showmode is enabled
+        " because it will clobber the sum/avg/etc report with the
+        " "-- VISUAL --" message.
+        return "y:call VMATH_Analyse()\<CR>"
+    else
+        return "y:call VMATH_Analyse()\<CR>gv"
+    endif
 endfunction
 
 " What to consider a number...
