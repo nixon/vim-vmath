@@ -54,5 +54,4 @@ The original author placed vmath.vim in the public domain.
 # References
 
  * http://www.oscon.com/oscon2013/public/schedule/detail/28875
- * https://docs.google.com/file/d/0Bx3f0gFZh5Jqc0MtcUstV3BKdTQ/edit
  * http://www.youtube.com/watch?v=aHm36-na4-4
